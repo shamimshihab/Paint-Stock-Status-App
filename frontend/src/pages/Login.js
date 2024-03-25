@@ -1,5 +1,4 @@
 import React, { useState, useContext } from "react";
-import axios from "axios";
 import { UserContext } from "../componenent/UserContext";
 import { useNavigate } from "react-router-dom";
 import { loginUser } from "../services/apiService";
@@ -52,41 +51,14 @@ const Login = () => {
   return (
     <Paper elevation={3} className="home-page-container">
       <Container>
-        <Box
-          display="flex"
-          flexDirection="column"
-          justifyContent="center"
-          alignItems="center"
-          minHeight="70dvh"
-        >
+        <Box className="centered-login-box">
           <Paper elevation={3} style={{ padding: "20px" }}>
-            <Box
-              style={{
-                display: "flex",
-                flexDirection: "column",
-                alignItems: "center",
-              }}
-            >
+            <Box className="login-box">
               <Typography variant="h5" align="center" gutterBottom>
                 Login
               </Typography>
-              <form
-                onSubmit={handleLogin}
-                style={{
-                  flexDirection: "column",
-                  display: "flex",
-                  border: "1px solid red",
-                  width: "100%",
-                }}
-              >
-                <Box
-                  style={{
-                    display: "flex",
-                    flexDirection: "column",
-                    border: "1px solid red",
-                    width: "100%",
-                  }}
-                >
+              <form onSubmit={handleLogin} className="login-form">
+                <Box className="login-form-box">
                   <TextField
                     label="userName"
                     value={userName}
@@ -105,13 +77,12 @@ const Login = () => {
                     <FormHelperText error>{errorMessage}</FormHelperText>
                   )}
                 </Box>
-                <Box style={{ display: "flex", justifyContent: "center" }}>
+                <Box className="logn-btn-box">
                   <Button
                     type="submit"
                     variant="contained"
                     color="primary"
-                    className="btn-text"
-                    style={{ marginTop: "1rem" }}
+                    className="btn-login"
                   >
                     Login
                   </Button>

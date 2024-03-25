@@ -8,13 +8,7 @@ const Error = () => {
   return (
     <Paper elevation={3} className="home-page-container">
       <Container>
-        <Box
-          display="flex"
-          flexDirection="column"
-          alignItems="center"
-          justifyContent="center"
-          minHeight="90dvh"
-        >
+        <Box className="error-page-box ">
           <Typography variant="h4" gutterBottom align="center">
             Page Not Found
           </Typography>
@@ -22,7 +16,11 @@ const Error = () => {
             This Page does not Exist.
           </Typography>
           {/* Navigate to login page */}
-          <Button variant="contained" onClick={() => navigate("/")}>
+          <Button
+            variant="contained"
+            className="btn-text"
+            onClick={() => navigate("/")}
+          >
             Go to Login Page
           </Button>
         </Box>
