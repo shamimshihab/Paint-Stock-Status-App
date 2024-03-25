@@ -1,6 +1,6 @@
 # Paint Stock Status App
 
-The Paint Stock Status App is a full-stack application designed to streamline the management of paint stock within a paint company. This application facilitates efficient tracking and updating of paint stock levels .The deployed application can be accssed at https://paint-stock-app-deploy.vercel.app/.
+The Paint Stock Status App is a full-stack application designed to streamline the management of paint color stock within a paint company. This application facilitates efficient tracking and updating of paint color stock levels .The deployed application can be accssed at https://paint-stock-app-deploy.vercel.app/.
 
 ## Technology Used In This Project:
 
@@ -59,12 +59,12 @@ After running backend, frontend can be started.
 
 Users database and paint color stock status already stored in the MongoDb database.
 
-At first, the user needs to log in to the web application with their user ID and password. For example:
+At first, the user needs to log in to the web application with their user name and password. For example:
 
-- User John (painter) has the username "John" and password "test".
-- User Jane (manager) has the username "Jane" and password "test".
-- User Adam (system admin) has the username "Adam" and password "test".
-- User Painter1 (painter) has the username "Painter1" and password "test".
+- User John (painter) has the user name "John" and password "test".
+- User Jane (manager) has the user name "Jane" and password "test".
+- User Painter1 (painter) has the user name "Painter1" and password "test".
+- User Adam (system admin) has the user name "Adam" and password "test".
 
 ## User Edit Permissions and Expected Behavior
 
@@ -80,4 +80,4 @@ Based on given permission, Users can expect following behavior.
 
 ## Deployment
 
-In this repository, we have a dedicated `deployment` branch for deploying our application. The backend is deployed on Render, with build and start commands specified to run from the backend directory. Auto-deploy is enabled, ensuring that any changes pushed to this branch are automatically reflected in the live application. The frontend code is deployed from the frontend folder on Vercel, allowing deployment from the same branch. The application can be accessed the at https://paint-stock-app-deploy.vercel.app/.
+In this repository, a dedicated `deployment` branch for deploying the application. The backend is deployed on Render, with build and start commands specified to run from the backend directory. Auto-deploy is enabled, ensuring that any changes pushed to this branch are automatically reflected in the live application. The frontend code is deployed from the frontend folder on Vercel, allowing deployment from the same branch. The application can be accessed the at https://paint-stock-app-deploy.vercel.app/.

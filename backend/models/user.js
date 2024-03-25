@@ -1,5 +1,5 @@
-//Userschema for user collection
-// Each user has unique name, password, rolde and edit permission
+//Users chema for user collection
+//Each user has unique name, password, rolde and edit permission
 const mongoose = require("mongoose");
 
 const userSchema = new mongoose.Schema({
