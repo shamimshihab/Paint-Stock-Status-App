@@ -1,6 +1,6 @@
 import axios from "axios";
-
-const API_BASE_URL = "http://localhost:4000";
+const API_BASE_URL = "https://paint-stock-status-app.onrender.com";
+// const API_BASE_URL = "http://localhost:4000";
 
 // Logs in a user
 export const loginUser = async (userName, password) => {
