@@ -1,0 +1,35 @@
+* {
+  box-sizing: border-box;
+}
+a {
+  cursor: pointer;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+main {
+  flex: 1;
+  margin: 0 auto;
+  height: 100dvh;
+  overflow: auto;
+  scrollbar-width: thin;
+  scrollbar-color: rgb(37, 123, 145) rgb(18, 158, 252);
+}
+.home-page-container {
+  max-width: 900px;
+  margin: 0 auto;
+  border: 1px solid red;
+  min-height: 70dvh;
+}
+.header-container {
+  max-width: 900px;
+  margin: 1rem auto;
+  border: 1px solid red;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 8dvh;
+  /* margin: 1rem 1rem; */
+}
