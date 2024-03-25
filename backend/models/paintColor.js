@@ -1,3 +1,4 @@
+// Schema for managing paint stock, with each color assigned a stock status.
 const mongoose = require("mongoose");
 
 const paintColorSchema = new mongoose.Schema({
