@@ -1,5 +1,4 @@
 import React, { useState, useEffect, useContext } from "react";
-import axios from "axios";
 import {
   Container,
   TextField,
@@ -52,7 +51,6 @@ const Register = () => {
         theme: "light",
       });
       setTimeout(() => navigate("/admin"), 1500);
-      // alert("User registered successfully");
     } catch (error) {
       console.error("Registration failed");
     }
@@ -61,46 +59,14 @@ const Register = () => {
   return (
     <Paper elevation={3} className="home-page-container">
       <Container>
-        <Box
-          display="flex"
-          flexDirection="column"
-          justifyContent="center"
-          alignItems="center"
-        >
-          <Paper elevation={3} style={{ padding: "20px", marginTop: "2rem" }}>
-            <Box
-              style={{
-                display: "flex",
-                flexDirection: "column",
-                justifyContent: "center",
-                alignItems: "center",
-
-                // minHeight: "70dvh",
-              }}
-            >
+        <Box className="register-page-main-box">
+          <Paper elevation={3} className="register-paper ">
+            <Box className="login-box">
               <Typography variant="h5" gutterBottom>
                 Register User
               </Typography>
-              <form
-                onSubmit={handleSubmit}
-                style={{
-                  flexDirection: "column",
-                  display: "flex",
-                  flexDirection: "column",
-                  border: "1px solid red",
-                  alignItems: "center",
-                  width: "100%",
-                }}
-              >
-                <Box
-                  style={{
-                    flexDirection: "column",
-                    display: "flex",
-                    flexDirection: "column",
-                    border: "1px solid red",
-                    width: "100%",
-                  }}
-                >
+              <form onSubmit={handleSubmit} className="form-register">
+                <Box className="register-inside-form-box ">
                   <TextField
                     label="Username"
                     name="userName"
@@ -129,11 +95,7 @@ const Register = () => {
                       <MenuItem value="admin">Admin</MenuItem>
                     </Select>
                   </FormControl>
-                  <FormControl
-                    // fullWidth
-
-                    margin="normal"
-                  >
+                  <FormControl margin="normal">
                     <InputLabel>Edit Permission</InputLabel>
                     <Select
                       label="Edit Permission"
@@ -150,9 +112,7 @@ const Register = () => {
                   type="submit"
                   variant="contained"
                   color="primary"
-                  className="btn-text"
-                  // fullWidth
-                  sx={{ mt: 2 }}
+                  className="register-btn-text"
                 >
                   Register
                 </Button>

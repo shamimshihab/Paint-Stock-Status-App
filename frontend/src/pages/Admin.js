@@ -1,5 +1,4 @@
 import React, { useState, useEffect, useContext } from "react";
-import axios from "axios";
 import {
   Container,
   Table,
@@ -115,27 +114,12 @@ const Admin = () => {
   return (
     <Paper elevation={3} className="home-page-container">
       <Container>
-        <Box
-          style={{
-            height: "5dvh",
-            borderBottom: "1px dashed",
-            margin: "1rem 0rem",
-            display: "flex",
-            flexDirection: "row",
-            justifyContent: "space-between",
-          }}
-        >
-          <Typography
-            variant="h6"
-            style={{ height: "80%", border: "1px solid red" }}
-          >
-            User Management Page
-          </Typography>
+        <Box className="dashed-box-admin ">
+          <Typography variant="h6">User Management Page</Typography>
           {/* Navigate to new page to register new user */}
           <Button
             variant="contained"
-            className="btn-text"
-            style={{ height: "80%", border: "1px solid red" }}
+            className="dashed-box-btn"
             size="small"
             startIcon={<AddIcon />}
             onClick={(event) => {
@@ -146,13 +130,7 @@ const Admin = () => {
             Add New User
           </Button>
         </Box>
-        <Box
-          style={{
-            display: "flex",
-            border: "1px solid red",
-            margin: "1rem 0rem",
-          }}
-        >
+        <Box className="table-box">
           <TableContainer component={Paper} sx={{ overflowX: "auto" }}>
             <Table>
               <TableHead>
@@ -169,8 +147,6 @@ const Admin = () => {
                     <TableCell>{user.userName}</TableCell>
                     <TableCell>{user.role}</TableCell>
                     <TableCell>
-                      {/*                   
-                  {user.editpermission} */}
                       <Select
                         value={user.editPermission}
                         onChange={(e) =>

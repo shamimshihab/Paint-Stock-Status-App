@@ -13,7 +13,6 @@ import {
   Button,
   Typography,
 } from "@mui/material";
-import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { UserContext } from "../componenent/UserContext";
 import { fetchPaintStockStatus } from "../services/apiService";
@@ -23,25 +22,6 @@ const PaintStock = () => {
   const navigate = useNavigate();
   const { userInfo } = useContext(UserContext);
   const token = userInfo.token;
-
-  //fetching paint status data from the server
-  // useEffect(() => {
-  //   const fetchPaintStockStatus = async () => {
-
-  //     try {
-  //       const response = await axios.get("http://localhost:4000/paints", {
-  //         headers: {
-  //           Authorization: `Bearer ${token}`,
-  //         },
-  //       });
-  //       setPaints(response.data);
-  //     } catch (error) {
-  //       console.error("Error:", error);
-  //     }
-  //   };
-
-  //   fetchPaintStockStatus();
-  // }, []);
 
   useEffect(() => {
     const fetchPaintData = async () => {
@@ -64,23 +44,10 @@ const PaintStock = () => {
   return (
     <Paper elevation={3} className="home-page-container">
       <Container>
-        <Box
-          style={{
-            height: "5dvh",
-            borderBottom: "1px dashed",
-            margin: "1rem 0rem",
-          }}
-        >
+        <Box className="dashed-box">
           <Typography variant="h6">Paint Stock Status Page</Typography>
         </Box>
-        <Box
-          style={{
-            overflowX: "auto",
-            display: "flex",
-            border: "1px solid red",
-            margin: "1rem 0rem",
-          }}
-        >
+        <Box className="table-box">
           <TableContainer component={Paper}>
             <Table>
               <TableHead>

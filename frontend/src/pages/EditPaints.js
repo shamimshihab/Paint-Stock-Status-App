@@ -14,7 +14,6 @@ import {
   Typography,
 } from "@mui/material";
 
-import axios from "axios";
 import { UserContext } from "../componenent/UserContext";
 import { useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
@@ -62,15 +61,7 @@ const EditPaintStockStatus = () => {
           status: paint.status,
         }));
         await updatePaintStockStatus(token, updatedPaintStockStatus);
-        // await axios.put(
-        //   "http://localhost:4000/paints",
-        //   updatedPaintStockStatus,
-        //   {
-        //     headers: {
-        //       Authorization: `Bearer ${token}`,
-        //     },
-        //   }
-        // );
+
         toast("Statuses updated successfully", {
           position: "top-right",
           autoClose: 5000,
@@ -81,7 +72,8 @@ const EditPaintStockStatus = () => {
           progress: undefined,
           theme: "light",
         });
-        setTimeout(() => navigate("/paint-stock"), 2000);
+        setValueChange(false);
+        // setTimeout(() => navigate("/paint-stock"), 2000);
       } catch (error) {
         console.error("Error updating paints:", error);
 
@@ -114,38 +106,16 @@ const EditPaintStockStatus = () => {
   return (
     <Paper elevation={3} className="home-page-container">
       <Container>
-        <Box
-          style={{
-            height: "5dvh",
-            borderBottom: "1px dashed",
-            margin: "1rem 0rem",
-          }}
-        >
+        <Box className="dashed-box ">
           <Typography variant="h6">Edit Stock Status Page</Typography>
         </Box>
-        <Box
-          style={{
-            display: "flex",
-            border: "1px solid red",
-            margin: "1rem 0rem",
-          }}
-        >
+        <Box className="table-box">
           <TableContainer component={Paper}>
             <Table>
               <TableHead>
                 <TableRow>
-                  <Box
-                    style={{
-                      // border: "1px solid red",
-                      display: "flex",
-                      justifyContent: "space-between",
-                      alignItems: "center",
-                      height: "5dvh",
-                      padding: "4px",
-                    }}
-                  >
+                  <Box className="box-inside-table">
                     <div>
-                      {" "}
                       <Typography variant="h6">Color</Typography>
                     </div>
                     <div>
@@ -157,16 +127,7 @@ const EditPaintStockStatus = () => {
               <TableBody>
                 {paints.map((paint, index) => (
                   <TableRow key={paint._id}>
-                    <Paper
-                      elevation={4}
-                      style={{
-                        display: "flex",
-                        justifyContent: "space-between",
-                        alignItems: "center",
-                        padding: "4px",
-                        margin: "4px",
-                      }}
-                    >
+                    <Paper elevation={4} className="row-box ">
                       <div>{paint.color}</div>
                       <div>
                         <Select
@@ -192,22 +153,12 @@ const EditPaintStockStatus = () => {
           </TableContainer>
         </Box>
 
-        <Box
-          sx={{
-            mt: 2,
-            display: "flex",
-            justifyContent: "space-between",
-            alignItems: "center",
-            padding: "4px",
-            margin: "4px",
-          }}
-        >
+        <Box className="doubl-btn-box">
           <Button
             variant="contained"
             className="btn-text"
             color="primary"
             onClick={handleBackButton}
-            style={{ marginTop: "20px" }}
           >
             Previous Page
           </Button>
@@ -217,7 +168,6 @@ const EditPaintStockStatus = () => {
             className="btn-text"
             color="primary"
             onClick={handleUpdateStatus}
-            style={{ marginTop: "20px" }}
           >
             Update Status
           </Button>
