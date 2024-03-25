@@ -49,6 +49,7 @@ const PaintStock = () => {
         </Box>
         <Box className="table-box">
           <TableContainer component={Paper}>
+            {/* Displaying paint stock status in table fromate */}
             <Table>
               <TableHead>
                 <TableRow>

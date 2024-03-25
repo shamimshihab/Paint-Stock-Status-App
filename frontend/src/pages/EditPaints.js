@@ -22,6 +22,7 @@ import {
   fetchPaintStockStatus,
   updatePaintStockStatus,
 } from "../services/apiService";
+
 const EditPaintStockStatus = () => {
   //Store list of paints and stock status
   const [paints, setPaints] = useState([]);
@@ -73,7 +74,6 @@ const EditPaintStockStatus = () => {
           theme: "light",
         });
         setValueChange(false);
-        // setTimeout(() => navigate("/paint-stock"), 2000);
       } catch (error) {
         console.error("Error updating paints:", error);
 

@@ -57,6 +57,7 @@ router.post("/login", async (req, res) => {
       return res.status(400).json({ message: "Invalid credentials" });
     }
 
+    // Matching with the user password
     const isMatch = await bcrypt.compare(password, user.password);
     if (!isMatch) {
       return res.status(400).json({ message: "Invalid credentials" });
@@ -89,6 +90,8 @@ router.put("/:id", authenticateToken, async (req, res) => {
 
     const { id } = req.params;
     const { editPermission } = req.body;
+
+    // Updating user permission
     const updatedUser = await User.findByIdAndUpdate(
       id,
       { editPermission },
@@ -105,7 +108,7 @@ router.put("/:id", authenticateToken, async (req, res) => {
   }
 });
 
-// Delete User
+// Delete a User
 router.delete("/:id", authenticateToken, async (req, res) => {
   try {
     const userId = req.userId;

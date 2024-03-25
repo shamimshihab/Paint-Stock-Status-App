@@ -34,7 +34,7 @@ const Login = () => {
           userName: userName,
           editPermission: data.editPermission,
         });
-        //Navigate to right page
+        //Navigate to right page according to their role
         if (data.role === "admin") {
           navigate("/admin");
         } else {

@@ -1,5 +1,7 @@
 const express = require("express");
+//Importing User Paint Color model
 const PaintColor = require("../models/paintColor");
+// Importing token verify middleware
 const authenticateToken = require("../middleware/authenticateToken");
 const User = require("../models/user");
 const router = express.Router();
